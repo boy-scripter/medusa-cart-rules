@@ -1,0 +1,75 @@
+{
+  "name": "@xross-dev/medusa-cart-rules",
+  "version": "0.1.0",
+  "description": "Medusa v2 plugin: cart & per-product quantity rules scoped by customer group, sales channel, product, variant, collection or category.",
+  "author": "tikmark",
+  "license": "MIT",
+  "files": [
+    ".medusa/server"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./workflows": "./.medusa/server/src/workflows/index.js",
+    "./.medusa/server/src/modules/*": "./.medusa/server/src/modules/*/index.js",
+    "./modules/*": "./.medusa/server/src/modules/*/index.js",
+    "./providers/*": "./.medusa/server/src/providers/*/index.js",
+    "./*": "./.medusa/server/src/*.js",
+    "./admin": {
+      "import": "./.medusa/server/src/admin/index.mjs",
+      "require": "./.medusa/server/src/admin/index.js",
+      "default": "./.medusa/server/src/admin/index.js"
+    }
+  },
+  "keywords": [
+    "medusa-plugin",
+    "medusa-plugin-integration",
+    "medusa-v2",
+    "cart",
+    "limits"
+  ],
+  "scripts": {
+    "build": "medusa plugin:build",
+    "dev": "medusa plugin:develop",
+    "db:generate": "medusa plugin:db:generate",
+    "test": "node --import tsx --test src/modules/cart-rules/engine/engine.spec.ts",
+    "prepublishOnly": "medusa plugin:build"
+  },
+  "devDependencies": {
+    "@medusajs/admin-sdk": "^2.8.0",
+    "@medusajs/cli": "^2.8.0",
+    "@medusajs/framework": "^2.8.0",
+    "@medusajs/icons": "^2.8.0",
+    "@medusajs/js-sdk": "^2.8.0",
+    "@medusajs/medusa": "^2.8.0",
+    "@medusajs/test-utils": "^2.8.0",
+    "@medusajs/ui": "^4.0.0",
+    "@swc/core": "^1.7.28",
+    "@tanstack/react-query": "5.64.2",
+    "@types/node": "^20",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.2.25",
+    "awilix": "^8.0.1",
+    "pg": "^8.13.0",
+    "prettier": "^3.4.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.2.11"
+  },
+  "peerDependencies": {
+    "@medusajs/admin-sdk": "^2.8.0",
+    "@medusajs/cli": "^2.8.0",
+    "@medusajs/framework": "^2.8.0",
+    "@medusajs/icons": "^2.8.0",
+    "@medusajs/js-sdk": "^2.8.0",
+    "@medusajs/medusa": "^2.8.0",
+    "@medusajs/test-utils": "^2.8.0",
+    "@medusajs/ui": "^4.0.0",
+    "@tanstack/react-query": "5.64.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
