@@ -1,7 +1,9 @@
 import Medusa from "@medusajs/js-sdk"
 
+declare const __BACKEND_URL__: string | undefined
+
 export const sdk = new Medusa({
-  baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
+  baseUrl: __BACKEND_URL__ ?? "/",
   debug: import.meta.env.DEV,
-  auth: { type: "session" },
+  auth: { type: "jwt" },
 })
