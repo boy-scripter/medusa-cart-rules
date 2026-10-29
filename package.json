@@ -1,6 +1,6 @@
 {
   "name": "@xross-dev/medusa-cart-rules",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Medusa v2 plugin: cart & per-product quantity rules scoped by customer group, sales channel, product, variant, collection or category.",
   "author": "tikmark",
   "license": "MIT",
